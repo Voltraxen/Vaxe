@@ -32,14 +32,14 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #000; /* Noir */
-            color: #fff; /* Blanc */
+            background-color: #000;
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-image: linear-gradient(135deg, #0d0d0d 40%, #1a1a1a 100%);
-            animation: fadeIn 1s ease-in-out;
+            overflow: hidden;
         }
 
         .container {
@@ -51,10 +51,12 @@
             max-width: 400px;
             width: 100%;
             animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+            z-index: 2;
         }
 
         .container h1 {
-            color: #00ff00; /* Vert vif */
+            color: #00ff00;
             font-size: 2.8rem;
             margin-bottom: 25px;
             animation: fadeIn 1.4s ease-in-out;
@@ -138,9 +140,35 @@
             background-color: #00cc00;
             transform: scale(1.05);
         }
+
+        .news-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00ff00;
+        }
+
+        .news-item {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .news-item span {
+            color: #00ff00;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
     <div class="container" id="access-page">
         <h1>Access Vaxe</h1>
         <input type="password" id="access-key" class="input-field" placeholder="Enter your access key" required>
@@ -152,6 +180,14 @@
         <h1>Welcome to Vaxe</h1>
         <a href="#" class="dashboard-btn">Download Vaxe</a>
         <a href="https://discord.com" class="dashboard-btn" target="_blank">Join Discord</a>
+        
+        <!-- News Section -->
+        <div class="news-container">
+            <div class="news-title">Latest News</div>
+            <div class="news-item"><span>October 2024:</span> Vaxe can now be used even with battleye with V-eye!</div>
+            <div class="news-item"><span>September 2024:</span> New security updates !</div>
+            <div class="news-item"><span>August 2024:</span> Join our Discord for upcoming events and giveaways!</div>
+        </div>
     </div>
 
     <script>
