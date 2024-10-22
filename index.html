@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaxe Mod Menu</title>
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000; /* Noir */
+            color: #fff; /* Blanc */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(135deg, #0d0d0d 40%, #1a1a1a 100%);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.7);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container h1 {
+            color: #00ff00; /* Vert vif */
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            animation: fadeIn 1.4s ease-in-out;
+        }
+
+        .input-field {
+            padding: 12px;
+            width: 90%;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            background-color: #000;
+            color: #fff;
+            transition: border-color 0.3s ease;
+            animation: fadeIn 1.6s ease-in-out;
+        }
+
+        .input-field:focus {
+            border-color: #00cc00;
+        }
+
+        .submit-btn {
+            background-color: #00ff00;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: fadeIn 1.8s ease-in-out, buttonPulse 2s infinite;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #00cc00;
+            transform: scale(1.05);
+        }
+
+        .buy-text {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .buy-text a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .buy-text a:hover {
+            text-decoration: underline;
+        }
+
+        #dashboard {
+            display: none;
+            text-align: center;
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.7);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .dashboard-btn {
+            display: inline-block;
+            background-color: #00ff00;
+            color: #000;
+            padding: 12px 35px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .dashboard-btn:hover {
+            background-color: #00cc00;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="access-page">
+        <h1>Access Vaxe</h1>
+        <input type="password" id="access-key" class="input-field" placeholder="Enter your access key" required>
+        <button class="submit-btn" onclick="validateKey()">Validate</button>
+        <p class="buy-text">Don't own Vaxe? <a href="#">Buy it here</a></p>
+    </div>
+
+    <div id="dashboard">
+        <h1>Welcome to Vaxe</h1>
+        <a href="#" class="dashboard-btn">Download Vaxe</a>
+        <a href="https://discord.com" class="dashboard-btn" target="_blank">Join Discord</a>
+    </div>
+
+    <script>
+        function validateKey() {
+            document.getElementById('access-page').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
